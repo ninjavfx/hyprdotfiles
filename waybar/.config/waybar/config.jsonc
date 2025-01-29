@@ -15,6 +15,7 @@
     "modules-right": [
         "mpd",
         "idle_inhibitor",
+        "custom/spotify",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
@@ -186,6 +187,20 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "exec": "mediaplayer.py --player spotify",
+        "format": " {}",
+        "rotate": 0,
+        "return-type": "json",
+        "on-click": "playerctl play-pause --player spotify",
+        "on-click-right": "playerctl next --player spotify",
+        "on-click-middle": "playerctl previous --player spotify",
+        "on-scroll-up": "playerctl volume .05+",
+        "on-scroll-down": "playerctl volume .05-",
+        "max-length": 25,
+        "escape": true,
+        "tooltip": true
     },
     "custom/media": {
         "format": "{icon} {text}",
