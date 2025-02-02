@@ -1,6 +1,12 @@
 #!/usr/bin/bash
 #Edit hyprland config files with wofi
 
+# Kill Wofi if already running before execution
+if pgrep -x "wofi" >/dev/null; then
+  pkill wofi
+  #exit -1
+fi
+
 TERM=kitty
 EDITOR=vim
 config_path="/home/ale/dotfiles/hypr/.config/hypr/configs/"
