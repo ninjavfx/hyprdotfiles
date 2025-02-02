@@ -61,7 +61,7 @@ alias las='ls -A'                 # Hidden Files
 alias lls='ls -l'                 # List
 
 # Gix git issues
-alias git_setup="eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_ed25519_git"
+alias git_setup='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_ed25519_git'
 
 # Search running processes
 alias p="ps aux | grep "

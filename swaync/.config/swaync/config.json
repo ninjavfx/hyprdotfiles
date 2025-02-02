@@ -64,11 +64,11 @@
           "actions": [
               {
                   "label": "󰐥",
-                  "command": "bash -c $HOME/.config/hypr/scripts/Wlogout.sh"
+                  "command": "bash -c $HOME/.config/hypr/scripts/logout.sh"
               },
               {
                   "label": "󰌾",
-                  "command": "bash -c $HOME/.config/hypr/scripts/LockScreen.sh"
+                  "command": "hyprlock"
               },
               {
                   "label": "󰍃",
