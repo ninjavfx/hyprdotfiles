@@ -17,20 +17,22 @@
 //"spacing": 6,
 "fixed-center": true,
 "ipc": true,
-//"margin-top": 3,
-//"margin-left": 8,
-//"margin-right": 8,
+"margin-top": 8,
+"margin-left": 8,
+"margin-right": 8,
 
 "modules-left": [
   //"custom/arch",
-	"custom/separator#blank_2", 
+	//"custom/separator#blank_2", 
 	"hyprland/workspaces#rw",
-	"custom/separator#blank_2",
+	"custom/separator#blank_1",
 //	"mpris",
 	"custom/swaync",
 	"tray",
 	],
 "modules-center": [
+  "custom/playerctl",
+  "custom/separator#blank_2",
 	"clock#forest",
 	//"idle_inhibitor",
   "custom/hypridle"
@@ -40,11 +42,12 @@
 	"memory#forest",
 	"temperature#forest",
 	"disk#forest",
-	"custom/separator#blank_2",
+	//"custom/separator#blank_2",
 	//"backlight",
   //"battery#forest",
-	"custom/separator#blank_2",
-	"group/audio",
+	"custom/separator#blank_1",
+  "pulseaudio"
+	//"group/audio",
 	],
 
 // Additional / Edited Waybar Modules //
@@ -54,7 +57,7 @@
       "on-click": "wofi --show drun"
 },
 "clock#forest": {
-      "format": "{:%A %m.%d.%Y - %H:%M}",
+      "format": "{:%a %b %d - %I:%M%p}",
       "tooltip-format": "<span color='#D3C6AA' size='larger'>{:%Y %B}</span>\n<tt>{calendar}</tt>",
       "calendar-weeks-pos": "right",
       "today-format": "<span color='#E67E80' weight='ultrabold'>{}</span>",
@@ -92,7 +95,7 @@
 	"tooltip-format": "{timeTo} {power}w",
 	"on-click-middle": "~/.config/hypr/scripts/ChangeBlur.sh",
 	"on-click-right": "~/.config/hypr/scripts/Wlogout.sh",
-},
+}
 
 "cpu#forest": {
 	"format": "Cpu  󰍛  {usage}%",
