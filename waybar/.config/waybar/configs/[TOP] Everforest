@@ -32,10 +32,11 @@
 	],
 "modules-center": [
   "custom/playerctl",
-  "custom/separator#blank_2",
+  "custom/separator#blank_1",
 	"clock#forest",
 	//"idle_inhibitor",
-  "custom/hypridle"
+  "custom/hypridle",
+  "custom/separator#blank_1"
 	],
 "modules-right": [
 	"cpu#forest",
