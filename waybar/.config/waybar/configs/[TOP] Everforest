@@ -26,9 +26,9 @@
 	//"custom/separator#blank_2", 
 	"hyprland/workspaces#rw",
 	"custom/separator#blank_1",
-//	"mpris",
-	"custom/swaync",
-	"tray",
+  //"mpris",
+	"custom/swaync"
+	//"tray",
 	],
 "modules-center": [
   "custom/playerctl",
@@ -46,7 +46,8 @@
 	//"backlight",
   //"battery#forest",
 	"custom/separator#blank_1",
-  "pulseaudio"
+  "pulseaudio",
+  "tray"
 	//"group/audio",
 	],
 
@@ -95,10 +96,10 @@
 	"tooltip-format": "{timeTo} {power}w",
 	"on-click-middle": "~/.config/hypr/scripts/ChangeBlur.sh",
 	"on-click-right": "~/.config/hypr/scripts/Wlogout.sh",
-}
+},
 
 "cpu#forest": {
-	"format": "Cpu  󰍛  {usage}%",
+	"format": "Cpu 󰍛 {usage}%",
 	"interval": 1,
 	"min-length": 5,
 	"format-alt-click": "click",
@@ -114,7 +115,7 @@
 	//"format": "Disk    󰋊",
 	"path": "/",
 	//"format-alt-click": "click",
-	"format": "Disk 󰋊  {used}",
+	"format": "Disk 󰋊 {used}",
   "on-click-right": "baobab",
 //	"tooltip": true,
 //	"tooltip-format": "Disk    {used} used out of {total} on {path} ({percentage_used}%)",
@@ -122,7 +123,7 @@
 
 "memory#forest": {
 	"interval": 10,
-	"format": "Ram  󰾆  {used:0.1f}G",
+	"format": "Ram 󰾆 {used:0.1f}G",
 	"format-alt": "Ram    {percentage}%    󰾆",
 	"format-alt-click": "click",
 	"tooltip": true,
@@ -139,7 +140,7 @@
 	//"thermal-zone": 0,
 	"critical-threshold": 82,
 	"format-critical": "Temp {icon}  {temperatureC}°C",
-	"format": "Temp {icon}  {temperatureC}°C",
+	"format": "Temp{icon} {temperatureC}°C",
 	"format-icons": [
 		" 󰈸"
 	],

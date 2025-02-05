@@ -63,7 +63,7 @@
 
 // Hypridle inhibitor
 "custom/hypridle": {
-	"format": "󱫗 ",
+	"format": "󱫗",
 	"return-type": "json",
 	"escape": true,
 	"exec-on-event": true,
@@ -113,7 +113,7 @@
 "custom/playerctl": {
 	"format": "<span>{}</span>",
 	"return-type": "json",
-	"max-length": 25,
+	"max-length": 23,
 	"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} | {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
 	"on-click-middle": "playerctl play-pause",
 	"on-click": "playerctl previous",

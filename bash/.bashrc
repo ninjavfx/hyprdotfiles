@@ -7,8 +7,8 @@ export PATH=/home/ale/.local/bin:/opt/Apps:$PATH
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -25,7 +25,6 @@ HISTFILESIZE=5000
 # Don't put duplicate lines in the history and do not add lines that start with a space
 export HISTCONTROL=erasedups:ignoredups:ignorespace
 
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -39,12 +38,12 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+xterm-color | *-256color) color_prompt=yes ;;
 esac
 export TERM=xterm-256color
 
@@ -54,44 +53,42 @@ export TERM=xterm-256color
 #force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
+  else
+    color_prompt=
+  fi
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
+xterm* | rxvt*)
+  PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+  ;;
+*) ;;
 esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  #alias dir='dir --color=auto'
+  #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
-
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -103,7 +100,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+  . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -120,8 +117,7 @@ fi
 #source /usr/share/autojump/autojump.sh
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
-#Oh my bash 
-
+#Oh my bash
 
 # Path to your oh-my-bash installation.
 export OSH='/home/ale/.oh-my-bash'
@@ -140,7 +136,6 @@ POSH=agnoster
 #eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/EDM115-newline.omp.json)"
 eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/catppuccin_macchiato.omp.json)"
 #eval "$(oh-my-posh init bash --config $HOME/.cache/oh-my-posh/themes/uew.omp.json)"
-
 
 # If you set OSH_THEME to "random", you can ignore themes you don't like.
 # OMB_THEME_RANDOM_IGNORED=("powerbash10k" "wanelo")
@@ -232,72 +227,69 @@ plugins=(
   bashmarks
 )
 
-
 source "$OSH"/oh-my-bash.sh
 
 export EDITOR='vim'
 
 _yazi() {
-    local i cur prev opts cmd
-    COMPREPLY=()
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    prev="${COMP_WORDS[COMP_CWORD-1]}"
-    cmd=""
-    opts=""
+  local i cur prev opts cmd
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD - 1]}"
+  cmd=""
+  opts=""
 
-    for i in ${COMP_WORDS[@]}
-    do
-        case "${cmd},${i}" in
-            ",$1")
-                cmd="yazi"
-                ;;
-            *)
-                ;;
-        esac
-    done
-
-    case "${cmd}" in
-        yazi)
-            opts="-V -h --cwd-file --chooser-file --clear-cache --client-id --local-events --remote-events --debug --version --help [ENTRIES]..."
-            if [[ ${cur} == -* || ${COMP_CWORD} -eq 1 ]] ; then
-                COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
-                return 0
-            fi
-            case "${prev}" in
-                --cwd-file)
-                    COMPREPLY=($(compgen -f "${cur}"))
-                    return 0
-                    ;;
-                --chooser-file)
-                    COMPREPLY=($(compgen -f "${cur}"))
-                    return 0
-                    ;;
-                --client-id)
-                    COMPREPLY=($(compgen -f "${cur}"))
-                    return 0
-                    ;;
-                --local-events)
-                    COMPREPLY=($(compgen -f "${cur}"))
-                    return 0
-                    ;;
-                --remote-events)
-                    COMPREPLY=($(compgen -f "${cur}"))
-                    return 0
-                    ;;
-                *)
-                    COMPREPLY=()
-                    ;;
-            esac
-            COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
-            return 0
-            ;;
+  for i in ${COMP_WORDS[@]}; do
+    case "${cmd},${i}" in
+    ",$1")
+      cmd="yazi"
+      ;;
+    *) ;;
     esac
+  done
+
+  case "${cmd}" in
+  yazi)
+    opts="-V -h --cwd-file --chooser-file --clear-cache --client-id --local-events --remote-events --debug --version --help [ENTRIES]..."
+    if [[ ${cur} == -* || ${COMP_CWORD} -eq 1 ]]; then
+      COMPREPLY=($(compgen -W "${opts}" -- "${cur}"))
+      return 0
+    fi
+    case "${prev}" in
+    --cwd-file)
+      COMPREPLY=($(compgen -f "${cur}"))
+      return 0
+      ;;
+    --chooser-file)
+      COMPREPLY=($(compgen -f "${cur}"))
+      return 0
+      ;;
+    --client-id)
+      COMPREPLY=($(compgen -f "${cur}"))
+      return 0
+      ;;
+    --local-events)
+      COMPREPLY=($(compgen -f "${cur}"))
+      return 0
+      ;;
+    --remote-events)
+      COMPREPLY=($(compgen -f "${cur}"))
+      return 0
+      ;;
+    *)
+      COMPREPLY=()
+      ;;
+    esac
+    COMPREPLY=($(compgen -W "${opts}" -- "${cur}"))
+    return 0
+    ;;
+  esac
 }
 
 if [[ "${BASH_VERSINFO[0]}" -eq 4 && "${BASH_VERSINFO[1]}" -ge 4 || "${BASH_VERSINFO[0]}" -gt 4 ]]; then
-    complete -F _yazi -o nosort -o bashdefault -o default yazi
+  complete -F _yazi -o nosort -o bashdefault -o default yazi
 else
-    complete -F _yazi -o bashdefault -o default yazi
+  complete -F _yazi -o bashdefault -o default yazi
 fi
 
 # Set up fzf key bindings and fuzzy completion
@@ -307,21 +299,5 @@ source /home/ale/.config/fzf_completion.bash
 # Fastfetch
 # -----------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
-    fastfetch --config examples/13
+  fastfetch --config examples/13
 fi
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/ale/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/ale/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/ale/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/ale/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
