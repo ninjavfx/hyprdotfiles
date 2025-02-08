@@ -132,10 +132,7 @@ THEME_CLOCK_FORMAT="%H:%M"
 THEME_SHOW_SCM=true
 
 # ohmyposh for prompt
-POSH=agnoster
-#eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/EDM115-newline.omp.json)"
-eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/catppuccin_macchiato.omp.json)"
-#eval "$(oh-my-posh init bash --config $HOME/.cache/oh-my-posh/themes/uew.omp.json)"
+eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/catppuccin_macchiato_venv.omp.json)"
 
 # If you set OSH_THEME to "random", you can ignore themes you don't like.
 # OMB_THEME_RANDOM_IGNORED=("powerbash10k" "wanelo")
@@ -301,3 +298,6 @@ source /home/ale/.config/fzf_completion.bash
 if [[ $(tty) == *"pts"* ]]; then
   fastfetch --config examples/13
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/ale/.lmstudio/bin"

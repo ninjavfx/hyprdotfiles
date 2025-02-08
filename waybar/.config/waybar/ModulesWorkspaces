@@ -161,6 +161,7 @@
 		"title<.*Picture-in-Picture.*>": " ",
     "title<ChatGPT>": "󱋊 ",
 		"class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": " ",
+    "class<[Bb]rave-browser>": "󰯰 ",
 		"class<kitty|konsole>": " ",
 		"class<kitty-dropterm>": " ",
 		"class<Chromium|Thorium>": " ",
@@ -184,7 +185,7 @@
 		"class<com.obsproject.Studio>": " ",
 		"class<polkit-gnome-authentication-agent-1>": "󰒃 ",
 		"class<nwg-look>": " ",
-		"class<zen-alpha>": "󰰷 ", //Zen Browser
+		"class<zen>": "󰰷 ", //Zen Browser
 		"class<waterfox|waterfox-bin>": " ",
 		"class<microsoft-edge>": " ",
 		"class<vlc>": "󰕼 "

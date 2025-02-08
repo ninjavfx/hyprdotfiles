@@ -12,10 +12,8 @@ vim.cmd("set smartcase")
 vim.cmd("set showcmd")
 vim.cmd("set showmode")
 vim.cmd("set noswapfile")
-vim.cmd("set clipboard=unnamed")
 vim.cmd("filetype on")
 vim.cmd("filetype plugin on")
 vim.cmd("filetype indent on")
 vim.cmd("syntax on")
 vim.g.mapleader = " "
-
