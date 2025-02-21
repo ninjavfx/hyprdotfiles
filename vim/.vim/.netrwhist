@@ -1,12 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/mnt/perso/LUNA/FF/MM'
+let g:netrw_dirhist_8='/mnt/perso/LUNA/FF/NP'
+let g:netrw_dirhist_7='/mnt/perso/LUNA/FF/MR'
+let g:netrw_dirhist_6='/mnt/perso/LUNA/FF/GG'
 let g:netrw_dirhist_5='/home/ale/dotfiles/Hyprland-Dots/config/nvim'
 let g:netrw_dirhist_4='/home/ale/dotfiles/Hyprland-Dots/config/nvim/lua'
 let g:netrw_dirhist_3='/home/ale/dotfiles/hypr/.config/hypr'
 let g:netrw_dirhist_2='/home/ale/dotfiles/hypr/.config'
 let g:netrw_dirhist_1='/home/ale/dotfiles/hypr'
 let g:netrw_dirhist_0='/home/ale/00_SD/FF/00_output/ML'
-let g:netrw_dirhist_9='/home/ale/00_SD/FF/00_output/SJ'
-let g:netrw_dirhist_8='/home/ale/00_SD'
-let g:netrw_dirhist_7='/home/ale/03_CODE'
-let g:netrw_dirhist_6='/home/ale/.vim'
