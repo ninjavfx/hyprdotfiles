@@ -300,7 +300,7 @@ function y() {
 
 # Set up fzf key bindings and fuzzy completion
 source /home/ale/.config/fzf_completion.bash
-
+complete -cf sudo
 # -----------------------------------------------------
 # Fastfetch
 # -----------------------------------------------------
