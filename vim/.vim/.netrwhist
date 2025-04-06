@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/mnt/perso/LUNA/FF/MR'
 let g:netrw_dirhist_2='/mnt/work'
 let g:netrw_dirhist_1='/mnt/work/#recycle'
 let g:netrw_dirhist_0='/home/ale'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/mnt/perso/LUNA/FF/MR'
 let g:netrw_dirhist_6='/mnt/perso/LUNA/FF/GG'
 let g:netrw_dirhist_5='/home/ale/dotfiles/Hyprland-Dots/config/nvim'
 let g:netrw_dirhist_4='/home/ale/dotfiles/Hyprland-Dots/config/nvim/lua'
-let g:netrw_dirhist_3='/home/ale/dotfiles/hypr/.config/hypr'
