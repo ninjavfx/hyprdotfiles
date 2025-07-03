@@ -428,7 +428,7 @@
 "cpu#vertical": {
 	"format": "󰍛\n{usage}%",
 	"interval": 1,
-	"on-click-right": "gnome-system-monitor",
+	"on-click-right": "kitty --title btop sh -c 'btop'",
 },
 "memory#vertical": {
 	"interval": 10,

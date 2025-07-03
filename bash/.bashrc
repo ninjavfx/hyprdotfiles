@@ -132,7 +132,7 @@ THEME_CLOCK_FORMAT="%H:%M"
 THEME_SHOW_SCM=true
 
 # ohmyposh for prompt
-eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/catppuccin_macchiato_venv.omp.json)"
+eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/ale.toml)"
 
 # If you set OSH_THEME to "random", you can ignore themes you don't like.
 # OMB_THEME_RANDOM_IGNORED=("powerbash10k" "wanelo")
@@ -226,7 +226,7 @@ plugins=(
 
 source "$OSH"/oh-my-bash.sh
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 _yazi() {
   local i cur prev opts cmd
